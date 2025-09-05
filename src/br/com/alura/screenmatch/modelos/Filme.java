@@ -1,17 +1,54 @@
+package br.com.alura.screenmatch.modelos;
+
 public class Filme {
-    String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
+    private String nome;
+    private int anoDeLancamento;
+    private boolean incluidoNoPlano;
     private double somaDeAvaliacao;
     private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
 
-    int getTotalDeAvaliacoes(){
+    public String getNome() {
+        return nome;
+    }
+
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
+    public double getSomaDeAvaliacao() {
+        return somaDeAvaliacao;
+    }
+
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes(){
      return totalDeAvaliacoes;
     }
 
-    void exibeFichaTecnica(){
-        System.out.println("Filme: "+nome);
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    public void setAnoDeLancamento(int anoDeLancamento){
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano){
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos){
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+    public void exibeFichaTecnica(){
+        System.out.println("br.com.alura.screenmatch.modelos.Filme: "+nome);
         System.out.println("Ano: "+anoDeLancamento);
         System.out.println("Duração: "+duracaoEmMinutos+" minutos");
         System.out.println("Nota: "+ somaDeAvaliacao/totalDeAvaliacoes);
@@ -21,7 +58,7 @@ public class Filme {
             System.out.println("Status: Indisponível no plano atual.");
         }
     }
-    void avalia(double nota){
+    public void avalia(double nota){
         somaDeAvaliacao += nota;
         totalDeAvaliacoes ++;
     }
