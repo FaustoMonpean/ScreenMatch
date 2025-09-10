@@ -1,6 +1,9 @@
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
+import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.calculo.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculo.Classificavel;
+import br.com.alura.screenmatch.calculo.FiltroRecomendacao;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,15 +22,19 @@ public class Main {
         vikings.setEpisodiosPorTemporada(8);
         vikings.setTemporadas(7);
 
-//        topGun.avalia(10);
-//        topGun.avalia(4);
-//        topGun.exibeFichaTecnica();
-//        System.out.println("Total de Avaliações " + topGun.getTotalDeAvaliacoes());
+        topGun.avalia(10);
+        topGun.avalia(4);
+        topGun.exibeFichaTecnica();
+        System.out.println("Total de Avaliações " + topGun.getTotalDeAvaliacoes());
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
 
         calculadora.inclui(topGun);
         calculadora.inclui(vikings);
         System.out.println(calculadora.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(topGun);
+
     }
 }
