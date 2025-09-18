@@ -7,6 +7,10 @@ public class Episodio extends Titulo implements Classificavel {
     private String nome;
     private Serie serie;
 
+    public Episodio(String nomeEp, int ano) {
+        super(nomeEp, ano);
+    }
+
     public int getNumero() {
         return numero;
     }
@@ -34,5 +38,10 @@ public class Episodio extends Titulo implements Classificavel {
     @Override
     public int getClassificacao() {
         return (int) pegaMedia()/2;
+    }
+
+    @Override
+    public String toString() {
+        return "Título: "+nome+" Ano de Lançamento: "+anoDeLancamento+" Avaliação: "+getClassificacao();
     }
 }

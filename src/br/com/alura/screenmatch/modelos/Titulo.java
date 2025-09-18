@@ -8,6 +8,16 @@ public class Titulo {
     private int totalDeAvaliacoes;
     protected int duracaoEmMinutos;
 
+    public Titulo(String nomeFilme, int ano){
+        this.setNome(nomeFilme);
+        this.setAnoDeLancamento(ano);
+    }
+
+    @Override
+    public String toString() {
+        return "Título: "+nome+" Ano de Lançamento: "+anoDeLancamento;
+    }
+
     public String getNome() {
         return nome;
     }

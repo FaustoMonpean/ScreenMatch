@@ -6,11 +6,8 @@ public class Filme extends Titulo implements Classificavel {
     private String diretor;
     Scanner scan = new Scanner(System.in);
 
-    public Filme(String nomeFilme, String nomeDiretor, int ano, int duracao){
-        this.setNome(nomeFilme);
-        this.setDiretor(nomeDiretor);
-        this.setAnoDeLancamento(ano);
-        this.setDuracaoEmMinutos(duracao);
+    public Filme(String nomeFilme, int ano){
+        super(nomeFilme, ano);
     }
 
     public String getDiretor() {
@@ -25,5 +22,10 @@ public class Filme extends Titulo implements Classificavel {
     @Override
     public int getClassificacao() {
         return (int) pegaMedia()/2;
+    }
+
+    @Override
+    public String toString() {
+        return "Título: "+nome+" Ano de Lançamento: "+anoDeLancamento+" Avaliação: "+getClassificacao();
     }
 }
