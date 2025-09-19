@@ -4,13 +4,12 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 public class PrincipalListas {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        ArrayList<Titulo> listaDeFilmes = new ArrayList<>();
+        List<Titulo> listaDeFilmes = new ArrayList<>();
         boolean menu = true;
         int resposta;
         while (menu){
@@ -40,6 +39,7 @@ public class PrincipalListas {
                     listaDeFilmes.add(novoFilme);
                     break;
                 case 2:
+                    listaDeFilmes.sort(Comparator.comparing(Titulo::getNome));
                     for (Titulo f : listaDeFilmes) {
                         System.out.println(f.toString());
                     }
